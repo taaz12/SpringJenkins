@@ -59,8 +59,8 @@ public class UserServiceImplTest {
 		
 		@Test
 		public void testDeleteUser() {
-			us.deleteUser("3");
-			Assert.assertNull(us.retrieveUser("3"));
+			us.deleteUser("1");
+			Assert.assertNull(us.retrieveUser("1"));
 		}
 		
 		// 5 tests unitaires  
