@@ -42,7 +42,7 @@ stages{
  }
  
   stage("Lancement des tests unitaires"){
-   stpes {
+   steps {
      sh "mvn test"
  }
  
