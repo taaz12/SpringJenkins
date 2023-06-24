@@ -34,10 +34,22 @@ stages{
  
  stage('Creation livrable'){
    steps {
-   sh "mvn package -DskipTests=true"
+   sh "mvn package -DskipTests=true"  
+  /* apres dans le terminal ls /var/lib/jenkins/workspace/javapipeline-24-06/target/ pour voir le build fichier .jar */
+  
    }
  
  }
+ 
+  stage("Lancement des tests unitaires"){
+   stpes {
+     sh "mvn test"
+ }
+ 
+ } 
+ 
+ 
+ 
  
  
 }
