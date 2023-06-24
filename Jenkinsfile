@@ -32,7 +32,12 @@ stages{
  
  }
  
+ stage('Creation livrable'){
+   steps {
+   sh "mvn package -DskipTests=true"
+   }
  
+ }
  
  
 }
