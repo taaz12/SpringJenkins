@@ -1,7 +1,5 @@
 
 package tn.esprit.spring.service;
-
- 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,7 +41,7 @@ private static final Logger log = LogManager.getLogger(UserServiceImplTest.class
 		public void testRetrieveAllUsers() {
 			List<User> listUsers = us.retrieveAllUsers(); 
 			// if there are 7 users in DB : 
-			Assert.assertEquals(10, listUsers.size());
+			Assert.assertEquals(10L, listUsers.size());
 			
 		}
 		
@@ -53,7 +51,7 @@ private static final Logger log = LogManager.getLogger(UserServiceImplTest.class
 		public void testModifyUser() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
-			User u = new User(14, "Maroua", "Maroua11", d, Role.INGENIEUR); 
+			User u = new User(14L, "Maroua", "Maroua11", d, Role.INGENIEUR); 
 			User userUpdated  = us.updateUser(u); 
 			Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
 			log.info("user modifié avec succès");
@@ -62,7 +60,7 @@ private static final Logger log = LogManager.getLogger(UserServiceImplTest.class
 		@Test
 		public void testRetrieveUser() {
 			User userRetrieved = us.retrieveUser("12"); 
-			Assert.assertEquals(12, userRetrieved.getId().longValue());
+			Assert.assertEquals(12L, userRetrieved.getId().longValue());
 			log.info(" retrieve user: " + us);
 		}
 		
