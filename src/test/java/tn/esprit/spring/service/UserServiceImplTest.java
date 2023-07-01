@@ -24,7 +24,7 @@ public class UserServiceImplTest {
 
 		@Autowired
 		IUserService us; 
-
+private static final Logger log = LogManager.getLogger(UserServiceImplTest.class);
 @Test
 //	public void testAddUSer() throws ParseException {
 //
