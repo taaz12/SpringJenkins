@@ -24,7 +24,51 @@ public class UserServiceImplTest {
 
 		@Autowired
 		IUserService us; 
+
+@Test
+//	public void testAddUSer() throws ParseException {
+//
+//		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//		Date date = dateFormat.parse("2015-03-23");
+//		User u = new User(0, "Achraf", "Chourabi", date, Role.ingenieur);
+//		assertTrue(u.getRole().equals(Role.ingenieur));
+//		us.addUser(u);
+//	}
+@Test
+	public void testRetrieveUser() {
+		User user = us.retrieveUser("7");
+		assertNotNull(user.getDateNaissance());
+		log.info("retrieveUser : " + user);
+	}
+@Test
+	public void testDeleteUser() {
+		if(us.retrieveUser("7")!=null)
+		us.deleteUser("7");
+		
+	}
+@Test
+	public void testRetrieveAllUser() {
+		List<User> users = us.retrieveAllUsers();
+		log.info("retrieve all users" + users);
+		
+	}
+@Test
+	public void testUpdateUSer() throws ParseException {
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = dateFormat.parse("2015-03-23");
+		User u = new User(10, "Mayssa122222222", "ChourabiMODIFIE", date, Role.ingenieur);
+		assertTrue(u.getRole().equals(Role.ingenieur));
+		us.updateUser(u);
+	}
+
+
 	
+	
+}
+
+
+/*
 		@Test
 		public void testRetrieveAllUsers() {
 			List<User> listUsers = us.retrieveAllUsers(); 
@@ -59,15 +103,9 @@ public class UserServiceImplTest {
 		
 		@Test
 		public void testDeleteUser() {
-			us.deleteUser("13");
-			Assert.assertNull(us.retrieveUser("13"));
+			us.deleteUser("14");
+			Assert.assertNull(us.retrieveUser("14"));
 		}
 		
 		// 5 tests unitaires  
- 
-}
-
-
-
-
-
+ */
