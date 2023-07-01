@@ -31,8 +31,8 @@ private static final Logger log = LogManager.getLogger(UserServiceImplTest.class
 //
 //		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 //		Date date = dateFormat.parse("2015-03-23");
-//		User u = new User(0, "Achraf", "Chourabi", date, Role.ingenieur);
-//		assertTrue(u.getRole().equals(Role.ingenieur));
+//		User u = new User(0, "Achraf", "Chourabi", date, Role.INGENIEUR);
+//		assertTrue(u.getRole().equals(Role.INGENIEUR));
 //		us.addUser(u);
 //	}
 @Test
@@ -58,8 +58,8 @@ private static final Logger log = LogManager.getLogger(UserServiceImplTest.class
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = dateFormat.parse("2015-03-23");
-		User u = new User(10, "Mayssa122222222", "ChourabiMODIFIE", date, Role.ingenieur);
-		assertTrue(u.getRole().equals(Role.ingenieur));
+		User u = new User(10, "Mayssa122222222", "ChourabiMODIFIE", date, Role.INGENIEUR);
+		assertTrue(u.getRole().equals(Role.INGENIEUR));
 		us.updateUser(u);
 	}
 
