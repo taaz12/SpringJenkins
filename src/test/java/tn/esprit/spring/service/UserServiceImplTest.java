@@ -26,87 +26,53 @@ public class UserServiceImplTest {
 		@Autowired
 		IUserService us; 
 private static final Logger log = LogManager.getLogger(UserServiceImplTest.class);
-@Test
-//	public void testAddUSer() throws ParseException {
-//
-//		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//		Date date = dateFormat.parse("2015-03-23");
-//		User u = new User(0, "Achraf", "Chourabi", date, Role.INGENIEUR);
-//		assertTrue(u.getRole().equals(Role.INGENIEUR));
-//		us.addUser(u);
-//	}
-@Test
-	public void testRetrieveUser() {
-		User user = us.retrieveUser("7");
-		assertNotNull(user.getDateNaissance());
-		log.info("retrieveUser : " + user);
-	}
-@Test
-	public void testDeleteUser() {
-		if(us.retrieveUser("7")!=null)
-		us.deleteUser("7");
-		
-	}
-@Test
-	public void testRetrieveAllUser() {
-		List<User> users = us.retrieveAllUsers();
-		log.info("retrieve all users" + users);
-		
-	}
-@Test
-	public void testUpdateUSer() throws ParseException {
-
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date date = dateFormat.parse("2015-03-23");
-		User u = new User(10, "Mayssa122222222", "ChourabiMODIFIE", date, Role.INGENIEUR);
-		assertTrue(u.getRole().equals(Role.INGENIEUR));
-		us.updateUser(u);
-	}
 
 
-	
-	
-}
-
-
-/*
-		@Test
-		public void testRetrieveAllUsers() {
-			List<User> listUsers = us.retrieveAllUsers(); 
-			// if there are 7 users in DB : 
-			Assert.assertEquals(10, listUsers.size());
-		}
-		
-		
-		@Test
+	@Test
 		public void testAddUser() throws ParseException {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
 			User u = new User("Maroua", "Maroua", d, Role.INGENIEUR); 
 			User userAdded = us.addUser(u); 
 			Assert.assertEquals(u.getLastName(), userAdded.getLastName());
+			log.info(" user ajoutée avec succès");
 		}
 	 
+
+		@Test
+		public void testRetrieveAllUsers() {
+			List<User> listUsers = us.retrieveAllUsers(); 
+			// if there are 7 users in DB : 
+			Assert.assertEquals(10, listUsers.size());
+			
+		}
+		
+		
+		
 		@Test
 		public void testModifyUser() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
-			User u = new User(13L, "Maroua", "Maroua11", d, Role.INGENIEUR); 
+			User u = new User(14, "Maroua", "Maroua11", d, Role.INGENIEUR); 
 			User userUpdated  = us.updateUser(u); 
 			Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
+			log.info("user modifié avec succès");
 		}
 	
 		@Test
 		public void testRetrieveUser() {
 			User userRetrieved = us.retrieveUser("12"); 
-			Assert.assertEquals(10L, userRetrieved.getId().longValue());
+			Assert.assertEquals(12, userRetrieved.getId().longValue());
+			log.info(" retrieve user: " + us);
 		}
 		
 		@Test
 		public void testDeleteUser() {
-			us.deleteUser("14");
-			Assert.assertNull(us.retrieveUser("14"));
+			us.deleteUser("15");
+			Assert.assertNull(us.retrieveUser("15"));
+			log.info(" user supprimé avec succès");
 		}
 		
 		// 5 tests unitaires  
- */
+ 
+}
