@@ -5,7 +5,7 @@ agent any
 //cron('*/4 * * * *')
 //}
 
-
+/*
   environment {
         // This can be nexus3 or nexus2
         NEXUS_VERSION = "nexus3"
@@ -18,7 +18,7 @@ agent any
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "admin:admin123"
     }
-
+*/
 
 stages{
  stage('clone git'){
@@ -84,14 +84,15 @@ stages{
       */
 
 
-
-  stage("Deploiement dans nexus ") {
+ stage("Deploiement dans nexus ") {
      		 steps{
               // If you are using Windows then you should use "bat" step
               // Since unit testing is out of the scope we skip them
-      	sh "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=5.1 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-ci-5.1.jar"
+      	sh "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=1.1 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-ci-5.1.jar"
                 }
             }
+
+  
  
 }
 
