@@ -6,7 +6,19 @@ agent any
 //}
 
 
- 
+  environment {
+        // This can be nexus3 or nexus2
+        NEXUS_VERSION = "nexus3"
+        // This can be http or https
+        NEXUS_PROTOCOL = "http"
+        // Where your Nexus is running
+        NEXUS_URL = "localhost:8081/Nexus"
+        // Repository where we will upload the artifact
+        NEXUS_REPOSITORY = "http://localhost:8081/repository/maven-releases/"
+        // Jenkins credential id to authenticate to Nexus OSS
+        NEXUS_CREDENTIAL_ID = "admin:admin123"
+    }
+
 
 stages{
  stage('clone git'){
@@ -55,11 +67,11 @@ stages{
 
 stage("Deploiement dans nexus ") {
      		 steps{
-              // If you are using Windows then you should use "bat" step
-              // Since unit testing is out of the scope we skip them
-      	sh "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=5.1 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-ci-5.1.jar"
+                          }
+  			sh "mvn deploy"
                 }
-            }
+
+
 
   
   
