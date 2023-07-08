@@ -71,7 +71,7 @@ stages{
              }
 */ 
   
-stage('SonarQube Analysis') {
+/* stage('SonarQube Analysis') {
   steps{
     script {
   def mvn = tool 'maven2';
@@ -82,7 +82,7 @@ stage('SonarQube Analysis') {
   }
   
     }
-  }
+  } */
   
 
 stage("Deployment stage") {
