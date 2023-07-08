@@ -56,9 +56,9 @@
 		</dependency>
 
 	</dependencies>
-<build>	
+  <!-- <build>	
 		<plugins>
-    <!-- Configure the SonarQube analysis 
+   Configure the SonarQube analysis 
     <plugin>
       <groupId>org.sonarsource.scanner.maven</groupId>
       <artifactId>sonar-maven-plugin</artifactId>
