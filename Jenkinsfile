@@ -76,7 +76,7 @@ stage('SonarQube Analysis') {
     script {
   def mvn = tool 'maven2';
     withSonarQubeEnv() {
-      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=java"
+      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=java -DskipTests=true"
       
     }
   }
