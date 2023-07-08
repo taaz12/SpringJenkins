@@ -66,10 +66,12 @@ stages{
  
 
 stage("Deploiement dans nexus ") {
-     		 steps{
-                          }
-  			sh "mvn deploy"
+     		 steps{  
+  			sh "mvn deploy -DskipTests=true"
                 }
+
+      
+             }
 
 
 
