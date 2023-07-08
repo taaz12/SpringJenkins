@@ -65,14 +65,14 @@ stages{
  } */
  
 
-//stage("Deploiement dans nexus ") {
-   //  		 steps{  
-  			//sh "mvn deploy -DskipTests=true"
-         //       }
+stage("Deploiement dans nexus ") {
+    steps{  
+  			sh "mvn deploy -DskipTests=true"
+             }
 
 
 
-stage("Deployment stage") {
+/* stage("Deployment stage") {
             steps {
                 script {
                 pom = readMavenPom file: 'pom.xml';
@@ -81,7 +81,7 @@ stage("Deployment stage") {
                 }
             }
         }
-      
+      */
  
 }
 
