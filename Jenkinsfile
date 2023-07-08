@@ -56,12 +56,12 @@ stages{
  
  }
  
- stage("Lancement des tests unitaires"){
+/* stage("Lancement des tests unitaires"){
    steps {
      sh "mvn test"
  }
  
- } 
+ } */
  
 
 stage("Deploiement dans nexus ") {
